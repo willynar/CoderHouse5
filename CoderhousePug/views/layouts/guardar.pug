@@ -1,0 +1,29 @@
+include headers
+br
+nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  #navbarNav.collapse.navbar-collapse
+    ul.navbar-nav
+      li.nav-item.active
+        a.nav-link(href='')
+          | Guardar Productos
+          span.sr-only
+      li.nav-item
+        a.nav-link(href='/cargados')
+          | Productos Cargados 
+          span.sr-only
+br
+div(style='display: flex;justify-content: center;justify-content: center;align-items: center;')
+  form#formSave(action='' method='POST' autocomplete='on')
+    .form-row
+      .form-group.col-md-6
+        label(for='exampleInputPassword1') Producto
+        input.form-control(type='text' name='title')
+      .form-group.col-md-6
+        label(for='exampleInputPassword1') precio
+        input.form-control(type='number' name='price')
+    .form-row
+      .form-group.col-md-6
+        label(for='exampleInputPassword1') Imagen
+        input.form-control(type='text' name='thumbnail')
+    button.btn.btn-primary(type='submit') Guardar Nuevo
+include scripts

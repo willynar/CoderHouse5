@@ -1,0 +1,35 @@
+include headers
+br
+nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  #navbarNav.collapse.navbar-collapse
+    ul.navbar-nav
+      li.nav-item
+        a.nav-link(href='/')
+          Guardar Productos
+          span.sr-only
+      li.nav-item.active
+        a.nav-link(href='')
+          Productos Cargados 
+          span.sr-only
+br
+table.table
+  thead
+    tr
+      th(scope='col') Id
+      th(scope='col') Titulo
+      th(scope='col') Precio
+      th(scope='col') Imagen
+  if lista
+    tbody
+      each item in lista
+        tr
+          th(scope='row')= item.id
+          td= item.title
+          td= item.price
+          td
+            img(src=item.thumbnail alt='' style='width:30px ;')
+  else
+    tbody
+      tr
+        td(colspan='4') Sin datos
+include scripts
